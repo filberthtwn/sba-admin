@@ -31,13 +31,12 @@ export default {
                 {title: 'Withdraw', pathName: 'Withdraw'},
                 {title: 'Users', pathName: 'Users'},
                 {title: 'Agents', pathName: 'Agents'},
-                {title: 'Logout', pathName: 'Login'},
+                {title: 'Logout', pathName: 'Logout'},
             ]
         }
     },
     watch: {
         $route(to){
-            console.log(to);
             this.currentPathName = to.name;
         }
     }

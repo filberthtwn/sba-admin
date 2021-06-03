@@ -33,6 +33,10 @@ const routes = [
     name: 'Agents',
     component: Agents
   },
+  {
+    path: '/logout',
+    name: 'Logout',
+  }
 ]
 
 const router = createRouter({
@@ -46,6 +50,14 @@ router.beforeEach(function(to, from, next){
       next({ name: 'Login' })
       return
     }
+  }
+  
+  console.log(to.name);
+
+  if (to.name === 'Logout'){
+    store.commit('setToken', null);
+    next({ name: 'Login' })
+    return
   }
   next()
 });
